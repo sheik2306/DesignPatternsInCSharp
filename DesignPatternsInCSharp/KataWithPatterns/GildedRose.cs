@@ -26,22 +26,17 @@ namespace DesignPatternsInCSharp.KataWithPatterns
         }
         public void UpdateQuality(ItemProxy item)
         {
-            for (var i = 0; i < Items.Count; i++)
-            {
+
                 if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (item.Quality > 0)
+                    if (item.Name != "Sulfuras, Hand of Ragnaros")
                     {
-                        if (item.Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            item.DecrementQuality();
-                        }
+                        item.DecrementQuality();
                     }
                 }
                 else
                 {
-                    if (item.Quality < 50)
-                    {
+
                         item.IncrementQuality();
 
                         if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
@@ -56,13 +51,12 @@ namespace DesignPatternsInCSharp.KataWithPatterns
 
                             if (item.SellIn < 6)
                             {
-                                if (item.Quality < 50)
-                                {
+
                                     item.IncrementQuality();
-                                }
+                                
                             }
                         }
-                    }
+                    
                 }
 
                 if (item.Name != "Sulfuras, Hand of Ragnaros")
@@ -76,13 +70,10 @@ namespace DesignPatternsInCSharp.KataWithPatterns
                     {
                         if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
                         {
-                            if (item.Quality > 0)
-                            {
                                 if (item.Name != "Sulfuras, Hand of Ragnaros")
                                 {
                                     item.DecrementQuality();
                                 }
-                            }
                         }
                         else
                         {
@@ -91,13 +82,9 @@ namespace DesignPatternsInCSharp.KataWithPatterns
                     }
                     else
                     {
-                        if (item.Quality < 50)
-                        {
                             item.IncrementQuality();
-                        }
                     }
                 }
-            }
         }
     }
 }

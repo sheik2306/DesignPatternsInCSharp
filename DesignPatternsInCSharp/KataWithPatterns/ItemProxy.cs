@@ -23,12 +23,18 @@ namespace DesignPatternsInCSharp.KataWithPatterns
 
         public void DecrementQuality()
         {
-            _item.Quality--;
+            if (_item.Quality > 0)
+            {
+                _item.Quality--;
+            }
         }
 
         public void IncrementQuality()
         {
-            _item.Quality++;
+            if (_item.Quality < 50)
+            {
+                _item.Quality++;
+            }
         }
         public void DecrementSellIn()
         {
